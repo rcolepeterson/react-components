@@ -6,6 +6,6 @@ Also ... react router sample code included.
 
 ## Init
 
-`yarn install'
+`yarn install`
 
-'yarn start'
+`yarn start`
