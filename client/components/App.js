@@ -1,32 +1,37 @@
+import "babel-polyfill";
 import React from "react";
-import Select from "./SelectDropDown";
 
 const APP = class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedValue: "Select" };
-    this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.state = {
+      lazyHero: null
+    };
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
-  handleSelectChange(e) {
-    this.setState({ selectedValue: e.target.value });
+  async loadHero() {
+    const {
+      default: Hero
+    } = await import(/* webpackChunkName: "hero" */ "./Hero");
+    this.setState({
+      lazyHero: Hero
+    });
+  }
+
+  clickHandler() {
+    this.loadHero();
   }
 
   render() {
-    let list = [
-      { label: "cole", id: 0 },
-      { label: "dan", id: 1 },
-      { label: "ralph", id: 2 }
-    ];
-    let msg = `You have selected item: ${this.state.selectedValue}`;
+    const Hero = this.state.lazyHero;
+
     return (
       <div>
-        <h3>{msg}</h3>
-        <Select
-          handleChange={this.handleSelectChange}
-          list={list}
-          selectedValue={this.state.selectedValue}
-        />
+        <button onClick={this.clickHandler}>
+          CLICK ME TO LOAD HERO COMPONENT
+        </button>
+        {Hero ? <Hero /> : <div>no hero</div>}
       </div>
     );
   }
