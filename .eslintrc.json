@@ -16,14 +16,14 @@
   },
   "rules": {
     "no-const-assign": "warn",
-    "no-console": 0,
+    "no-console": "off",
     "no-this-before-super": "warn",
     "no-undef": "warn",
     "no-unreachable": "warn",
     "no-unused-vars": "warn",
     "constructor-super": "warn",
     "valid-typeof": "warn",
-    "react/prop-types": 1
+    "react/prop-types": "warn"
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

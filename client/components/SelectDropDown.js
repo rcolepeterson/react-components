@@ -4,13 +4,15 @@ import PropTypes from "prop-types";
 const propTypes = {
   handleChange: PropTypes.func.isRequired,
   selectedValue: PropTypes.string.isRequired,
-  list: PropTypes.arrayOf({
-    id: PropTypes.Number,
-    label: PropTypes.string
-  }).isRequired
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      id: PropTypes.Number
+    })
+  ).isRequired
 };
 
-const Select = props => (
+const SelectDropDown = props => (
   <div>
     <select value={props.selectedValue} onChange={e => props.handleChange(e)}>
       <option value="default">{props.selectedValue}</option>
@@ -27,5 +29,5 @@ const Select = props => (
   </div>
 );
 
-Select.propTypes = propTypes;
-export default Select;
+SelectDropDown.propTypes = propTypes;
+export default SelectDropDown;
