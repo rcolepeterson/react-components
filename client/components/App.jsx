@@ -1,26 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Select from './select';
 
-const Home = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Help = () => <h2>help</h2>;
-const APP = () => (
-    <div>
-      <h1> Hello </h1>
-      <Router>
-        <div>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/help">Help</Link></li>
-          </ul>
-          <hr/>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/about" component={About}/>
-          <Route exact path="/help" component={Help}/>
-        </div>
-      </Router>
-    </div>
-)
+const APP = class extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = { selectedValue: 'Select'};
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({ selectedValue: e.target.value });
+  }
+
+  render() {
+    let list = [{ label: 'cole', id: 0 }, { label: 'dan', id: 1 }, { label: 'ralph', id: 2 }];
+    let msg = `You have selected item: ${this.state.selectedValue}`;
+    return (
+      <div>
+        <h3>{msg}</h3>
+        <Select handleChange={this.handleChange} list={list} selectedValue={this.state.selectedValue} />
+      </div>
+    )
+  }
+}
 
 export default APP;
