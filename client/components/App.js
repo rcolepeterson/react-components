@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "./select";
+import Select from "./SelectDropDown";
 
 const APP = class extends React.Component {
   constructor(props) {
