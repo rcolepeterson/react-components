@@ -1,8 +1,8 @@
-# Webpack Starter Kit
+# React Components
 
-Simple webpack starter code to get you up and runing using webpack and react. 
+Repo for reusable custom React components.
 
-Also ... react router sample code included.
+1. Select - `<select>` element
 
 ## Init
 
