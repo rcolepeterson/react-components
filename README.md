@@ -7,6 +7,8 @@ Repo for reusable custom React components and other examples.
 
 ### Init
 
+Clone repo and ...
+
 `yarn install`
 
 `yarn start`
