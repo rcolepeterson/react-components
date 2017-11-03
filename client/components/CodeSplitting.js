@@ -1,4 +1,4 @@
-// Async: needed for async support.
+// babel-polyfill: needed for Async support.
 // babelrc plugins: "plugins": ["syntax-dynamic-import", "dynamic-import-webpack"],
 import "babel-polyfill";
 import React from "react";
