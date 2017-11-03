@@ -1,4 +1,6 @@
 const path = require("path");
+// Import the plugin:
+var DashboardPlugin = require("webpack-dashboard/plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: "./client/index.html",
@@ -21,5 +23,5 @@ module.exports = {
       { test: /\.jsx$/, loader: "babel-loader", exclude: /node_modules/ }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig, new DashboardPlugin()]
 };

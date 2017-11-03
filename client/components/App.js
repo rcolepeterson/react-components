@@ -1,6 +1,7 @@
 import React from "react";
 import Select from "./SelectDropDown";
 import CodeSplitting from "./CodeSplitting";
+import Store from "../lib/Store";
 
 const APP = class extends React.Component {
   constructor(props) {
@@ -9,6 +10,8 @@ const APP = class extends React.Component {
       selectedValue: "Select"
     };
     this.handleSelectChange = this.handleSelectChange.bind(this);
+    const s = Store();
+    s.subscribe();
   }
 
   /***********************************
