@@ -1,6 +1,6 @@
 # React Components
 
-Repo for reusable custom React components.
+Repo for reusable custom React components and other examples.
 
 1. SelectDropDown - `<select>` element.
 
@@ -9,3 +9,5 @@ Repo for reusable custom React components.
 `yarn install`
 
 `yarn start`
+
+http://localhost:8080/
