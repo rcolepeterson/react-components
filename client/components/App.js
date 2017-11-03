@@ -1,37 +1,44 @@
-import "babel-polyfill";
 import React from "react";
+import Select from "./SelectDropDown";
+import CodeSplitting from "./CodeSplitting";
 
 const APP = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lazyHero: null
+      selectedValue: "Select"
     };
-    this.clickHandler = this.clickHandler.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
-  async loadHero() {
-    const {
-      default: Hero
-    } = await import(/* webpackChunkName: "hero" */ "./Hero");
-    this.setState({
-      lazyHero: Hero
-    });
-  }
+  /***********************************
+   * Handlers
+   **********************************/
 
-  clickHandler() {
-    this.loadHero();
+  /**
+   * Select Drop Down menu click handler.
+   */
+  handleSelectChange(e) {
+    this.setState({ selectedValue: e.target.value });
   }
 
   render() {
-    const Hero = this.state.lazyHero;
-
+    const list = [
+      { label: "cole", id: 0 },
+      { label: "dan", id: 1 },
+      { label: "ralph", id: 2 }
+    ];
+    const selectMsg = `You have selected item: ${this.state.selectedValue}`;
     return (
       <div>
-        <button onClick={this.clickHandler}>
-          CLICK ME TO LOAD HERO COMPONENT
-        </button>
-        {Hero ? <Hero /> : <div>no hero</div>}
+        <h3>{selectMsg}</h3>
+        <Select
+          handleChange={this.handleSelectChange}
+          list={list}
+          selectedValue={this.state.selectedValue}
+        />
+        <br />
+        <CodeSplitting />
       </div>
     );
   }
