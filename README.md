@@ -2,9 +2,10 @@
 
 Repo for reusable custom React components and other examples.
 
-1. SelectDropDown - `<select>` element.
+1. [SelectDropDown](https://github.com/rcolepeterson/react-components/blob/develop/client/components/SelectDropDown.js) - `<select>` element.
+2. [Code Splitting example.](https://github.com/rcolepeterson/react-components/blob/develop/client/components/CodeSplitting.js)
 
-## Init
+### Init
 
 `yarn install`
 
