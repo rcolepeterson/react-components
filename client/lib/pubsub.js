@@ -11,7 +11,7 @@ const observe = () => {
      */
     subscribe: (action, l) => {
       if (!l){
-        return new Error('no callback');
+        console.warn('no callback passed to pub sub');
       }
       // if no .. create
       if (actions.hasOwnProperty(action) === false) {
