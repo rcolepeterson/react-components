@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dashboard webpack-dev-server",
-    "lint": "eslint client/components"
+    "lint": "eslint client/components",
+    "test": "tape -r babel-register tests/*.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -27,6 +28,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "html-webpack-plugin": "^2.30.1",
+    "tape": "^4.8.0",
     "webpack": "^3.8.1",
     "webpack-dashboard": "^1.0.0",
     "webpack-dev-server": "^2.9.3"
