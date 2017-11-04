@@ -1,11 +1,24 @@
-const Store = () => {
-  const subscribe = () => {
-    console.log("subscribe");
+const store = reducer => {
+  let listeners = [];
+  let state = [];
+  const subscribe = l => listeners.push(l);
+  const publish = () => listeners.forEach(l => l());
+  const dispatch = action => {
+    state = reducer(state, action);
+    publish();
   };
+  const getState = () => state;
 
   return {
-    subscribe: subscribe
+    subscribe,
+    dispatch,
+    getState
   };
 };
 
-export default Store;
+const reducer = (state, action) => {
+  if (action.type === "add") return [...state, action.item];
+  else return state;
+};
+
+export { store, reducer };

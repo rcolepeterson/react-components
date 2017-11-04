@@ -15,7 +15,7 @@ const propTypes = {
 const SelectDropDown = props => (
   <div>
     <select value={props.selectedValue} onChange={e => props.handleChange(e)}>
-      <option value="default">{props.selectedValue}</option>
+      <option value="-1">Select</option>
       {props.list ? (
         props.list.map(item => (
           <option key={item.id} value={item.id}>
