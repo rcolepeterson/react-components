@@ -42,7 +42,7 @@ const APP = class extends React.Component {
   render() {
     const list = [
       { label: 'cole', id: 0 },
-      { label: 'dan', id: 1 },
+      { label: 'dan', id: 1342 },
       { label: 'ralph', id: 2 }
     ];
     // drop down selected msg.
