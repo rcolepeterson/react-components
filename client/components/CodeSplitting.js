@@ -1,7 +1,7 @@
 // babel-polyfill: needed for Async support.
 // babelrc plugins: "plugins": ["syntax-dynamic-import", "dynamic-import-webpack"],
-import "babel-polyfill";
-import React from "react";
+import 'babel-polyfill';
+import React from 'react';
 
 const APP = class extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ const APP = class extends React.Component {
   async loadHero() {
     const {
       default: Hero
-    } = await import(/* webpackChunkName: "hero" */ "./Hero");
+    } = await import(/* webpackChunkName: "hero" */ './Hero');
     this.setState({
       lazyHero: Hero
     });

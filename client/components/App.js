@@ -1,16 +1,16 @@
-import React from "react";
-import Select from "./SelectDropDown";
-import CodeSplitting from "./CodeSplitting";
-import { store, reducer } from "../lib/store";
-import pubsub from "../lib/pubsub";
-import SimpleHOC from "./SimpleHOC";
-import Hero from "./Hero";
+import React from 'react';
+import Select from './SelectDropDown';
+import CodeSplitting from './CodeSplitting';
+import { store, reducer } from '../lib/store';
+import pubsub from '../lib/pubsub';
+import SimpleHOC from './SimpleHOC';
+import Hero from './Hero';
 
 const APP = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedValue: "Select"
+      selectedValue: 'Select'
     };
 
     // add drop down select binding.
@@ -19,13 +19,13 @@ const APP = class extends React.Component {
     // store tester
     const s = store(reducer);
     s.subscribe(() => console.log(`store items = ${s.getState()}`));
-    s.dispatch({ type: "add", item: "cole" });
-    s.dispatch({ type: "add", item: "peterson" });
+    s.dispatch({ type: 'add', item: 'cole' });
+    s.dispatch({ type: 'add', item: 'peterson' });
 
     //observable pattern tester
     const events = pubsub();
-    events.subscribe("MyEvent", () => console.log("My event fired"));
-    events.publish("MyEvent");
+    events.subscribe('MyEvent', () => console.log('My event fired'));
+    events.publish('MyEvent');
   }
 
   /***********************************
@@ -41,9 +41,9 @@ const APP = class extends React.Component {
 
   render() {
     const list = [
-      { label: "cole", id: 0 },
-      { label: "dan", id: 1 },
-      { label: "ralph", id: 2 }
+      { label: 'cole', id: 0 },
+      { label: 'dan', id: 1 },
+      { label: 'ralph', id: 2 }
     ];
     // drop down selected msg.
     const selectMsg = `You have selected item: ${this.state.selectedValue}`;
