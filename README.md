@@ -23,3 +23,7 @@ Clone repo and ...
 `yarn start`
 
 http://localhost:8080/
+
+Tests - @todo add more tests.
+
+`yarn test`

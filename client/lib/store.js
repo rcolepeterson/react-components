@@ -1,4 +1,5 @@
 const store = reducer => {
+  if (!reducer) throw Error("no reducer");
   let listeners = [];
   let state = [];
   const subscribe = l => listeners.push(l);
