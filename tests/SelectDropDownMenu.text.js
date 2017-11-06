@@ -1,3 +1,4 @@
+// http://airbnb.io/enzyme/docs/guides/tape-ava.html
 import test from 'tape';
 import React from 'react';
 import { shallow, configure } from 'enzyme';
